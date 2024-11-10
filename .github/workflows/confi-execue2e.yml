@@ -1,0 +1,24 @@
+
+name: 'Execução N1'
+
+
+on:
+    workflow_dispatch:
+
+
+jobs:
+    e2e-testes:
+        runs-on: ['ubuntu-latest']
+        steps: 
+            - uses: actions/checkout@v4
+            - name: instalando Yarn
+              run: npm install -g yarn
+
+            - name: instalando dependências Yarn 
+              run: yarn
+            
+            - name: instalando cypress
+              run: npm install cypress 
+
+            - name: Executando os testes 
+              run: npx cypress run

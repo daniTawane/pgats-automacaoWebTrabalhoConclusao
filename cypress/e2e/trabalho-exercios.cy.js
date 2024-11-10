@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+///# <reference types="cypress" />
 import login from '../pages/login';
 import cadastro from '../pages/cadastro';
 import menu from '../pages/menu';

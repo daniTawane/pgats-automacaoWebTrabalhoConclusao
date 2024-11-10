@@ -19,6 +19,14 @@ jobs:
             
             - name: instalando cypress
               run: npm install cypress 
+                   npm install cypress-mochawesome-reporter
+
 
             - name: Executando os testes 
-              run: npx cypress run
+              run:  npx cypress run --reporter cypress-mochawesome-reporter --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true
+
+            - name: Relatórios dos testes
+              uses: actions/upload-artifact@v2
+              with:
+                name: mochawesome-report
+                path: cypress/reports
